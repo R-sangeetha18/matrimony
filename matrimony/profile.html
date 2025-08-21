@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Matrimony</title>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Or a similar clean font */
+     background-color:  rgb(230, 230, 245); /* Light background color */
+}
+
+.top-nav {
+    background-color:  #141D60; /* Dark blue */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.top-nav .logo span {
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+.top-nav nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: large;
+    margin-left: 600px;
+    
+}
+
+.top-nav nav ul li {
+    margin-left: 100px;
+}
+
+.top-nav nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+.top-nav nav ul li a:hover{
+    color: #007bff;
+}
+.logo-area {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 1em;
+    font-weight: bold;
+}
+.main-nav {
+    background-color: rgb(230, 230, 245); /* Lighter background color */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+.main-nav .logo span {
+    font-weight: bold;
+    font-size: 1.8em;
+
+}
+
+.main-nav nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: large;
+}
+
+.main-nav nav ul li {
+    margin-left: 100px;
+}
+
+.main-nav nav ul li a {
+    color: #333;
+    text-decoration: none;
+}
+.main-nav nav ul li a:hover{
+    color: #007bff;
+}
+.register-btn {
+    background-color: #141D60; /* Dark blue */
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+        .dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px; /* Adjust as needed */
+    background-color: #fff;
+    padding: 20px;
+    height: 500px;
+    margin-top: 50px;
+    margin-left: 5%;
+}
+.site-footer {
+    background-color: #1a004b; /* Dark blue background from image */
+    color: #ffffff;
+    padding: 40px 20px;
+     
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+  
+}
+
+.footer-column {
+    flex: 1; /* Allows columns to take equal space */
+    min-width: 180px; /* Minimum width before wrapping */
+    margin: 15px;
+}
+
+.footer-column h4 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    white-space: nowrap; /* Prevents title from wrapping */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+    display: flex; /* For aligning icon and text */
+    align-items: center;
+}
+
+.footer-column ul li i {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+.footer-column ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #a0a0a0; /* Lighter color on hover */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    color: #ffffff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #a0a0a0; /* Lighter color on hover */
+}
+
+.app-downloads {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.app-badge {
+    height: 40px; /* Adjust size as needed */
+    width: auto;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+}
+
+.app-badge:hover {
+    opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        margin-bottom: 30px;
+    }
+
+    .social-icons, .app-downloads {
+        justify-content: center;
+    }
+}
+.faq-container {
+  
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 700px;
+    padding: 30px;
+    position: fixed; /* Position fixed to overlay content */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the container */
+    z-index: 1000; /* Ensure it's on top */
+         background-color:  rgb(230, 230, 245);
+}
+
+.hidden {
+    display: none; /* Initially hide the FAQ section */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #888;
+}
+
+.faq-list {
+    margin-top: 20px;
+    
+}
+
+.faq-item {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    font-weight: bold;
+    cursor: pointer;
+    color: #555;
+}
+
+.faq-question:hover {
+    color: #007bff;
+}
+
+.plus-icon {
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+.faq-item .plus-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 15px 15px 0;
+    color: #666;
+}
+#contactBtn {
+    padding: 10px 20px;
+    background-color:  #141D60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#contactBtn:hover{
+    color: #007bff;
+}
+/* Overlay styles */
+.overlay {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+   
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.overlay-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    width: 80%; /* Adjust as needed */
+    max-width: 600px; /* Max width for larger screens */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+     background-color:  rgb(230, 230, 245);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px; /* Adjust padding to make space for background image elements */
+}
+
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.contact-form-container {
+    background-color:  rgb(230, 230, 245); /* Semi-transparent white background for form fields */
+    padding: 20px;
+    border-radius: 5px;
+    margin-left: 50%;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: calc(100% - 20px); /* Adjust for padding */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.form-group.message-group textarea {
+    min-height: 100px; /* Adjust height for message box */
+    resize: vertical;
+}
+
+.send-enquiry-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.send-enquiry-btn:hover {
+    background-color: #0056b3;
+}
+.decorative-elements {
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 50%; /* Adjust as needed */
+    height: 50%;
+    background-image: url('images/couple.png'); /* For butterflies and flowers */
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    display: flex;
+    align-items: flex-end; /* Align couple at the bottom */
+    justify-content: center;
+}
+
+.decorative-elements img {
+    max-width: 80%; /* Adjust size of couple image */
+    height: auto;
+    margin-bottom: 20px; /* Space from bottom */
+}
+
+.overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.overlay-content {
+    background-color:  rgb(230, 230, 245);
+    padding: 30px;
+    border-radius: 15px;
+
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.overlay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.overlay-header h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+/* Category Cards Layout */
+.category-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive grid */
+    gap: 20px;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* 4:3 Aspect Ratio */
+    overflow: hidden;
+}
+
+.card-image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Gradient Overlay on Images */
+.image-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top right, rgba(255, 105, 180, 0.5), rgba(135, 206, 250, 0.5));
+    mix-blend-mode: multiply;
+}
+
+.card-text {
+    padding: 15px;
+}
+
+.card-text h3 {
+    font-size: 1.1em;
+    margin: 0 0 5px 0;
+    color: #444;
+}
+
+.card-text p {
+    font-size: 0.9em;
+    color: #777;
+    margin: 0;
+}
+
+/* Basic responsiveness */
+@media (max-width: 768px) {
+    .overlay-content {
+        width: 95%;
+        padding: 20px;
+    }
+    .category-cards {
+        grid-template-columns: 1fr; /* Stack cards on small screens */
+    }
+}
+
+.profile-container {
+         
+            padding: 25px 30px;
+            border-radius: 8px;
+          
+            width: 100%;
+            max-width: 400px; /* Limit width for better readability */
+            margin-left: 5%;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        h1 svg {
+            margin-left: 10px;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        p strong {
+            display: inline-block;
+            width: 90px; /* Adjust width to align values */
+        }
+               .register-button {
+            background-color: #191970; /* Dark blue for button */
+            color: white;
+            padding: 12px 40px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+         .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            margin-bottom: 20px;
+            margin-left: 5%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            width: 90%;
+            max-width: 700px;
+        }
+        .profile-card {
+            display: flex;
+            align-items: center;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 15px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+        .profile-details {
+            flex-grow: 1;
+        }
+        .profile-details p {
+            margin: 2px 0;
+            color: #555;
+            font-size: 0.9em;
+        }
+        .profile-details p strong {
+            color: #333;
+        }
+        .profile-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .view-profile-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        .view-profile-btn:hover {
+            background-color: #0056b3;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-left: auto;
+        }
+        .add-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .add-btn:hover {
+            background-color: #218838;
+        }
+        .remove-btn {
+            background-color: #dc3545;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .remove-btn:hover {
+            background-color: #c82333;
+        }
+        .request-time {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            font-size: 0.8em;
+            color: #777;
+        }
+        .chart-container {
+  position: relative;
+  width: 800px; /* Adjust as needed */
+  height: 300px; /* Adjust as needed */
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  margin-left: 5%;
+  margin-bottom: 3%;
+}
+
+.y-axis {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.y-label {
+  font-size: 12px;
+  color: #333;
+}
+
+.grid-lines .horizontal-line {
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid #333;
+}
+.grid-lines div {
+    /* Styling for horizontal grid lines */
+    border-bottom: 1px solid #333;
+}
+.chart-line polyline {
+    fill: none;
+    stroke: black; /* Blue color for the line */
+    stroke-width: 1;
+    
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: rgb(230, 230, 245); /* Lighter background color */
+ 
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    width: 80%;
+    max-width: 900px; /* Adjust as needed */
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.modal-header h2 {
+    text-align: center;
+    margin-top: 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.plan-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.plan-card, .current-plan-card {
+    background-color: rgb(230, 230, 245); /* Lighter background color */
+    
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+    min-width: 300px; /* Adjust min-width for responsiveness */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.plan-card h3, .current-plan-card h3 {
+    color: darkblue; /* Example color for emphasis */
+}
+
+.price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.features li {
+    padding: 8px 0;
+    
+}
+
+.features li:last-child {
+    border-bottom: none;
+}
+
+.upgrade-button {
+    background-color: darkblue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .plan-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .plan-card, .current-plan-card {
+        min-width: unset;
+        width: 90%;
+    }
+}
+.popup-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top */
+}
+
+/* Popup Content */
+.popup-content {
+ background-color: rgb(230, 230, 245);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-align: center;
+    position: relative;
+    max-width: 350px; /* Adjust as needed */
+    width: 90%;
+}
+
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.popup-content p {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.chat-icon {
+    font-size: 3em;
+    color: #ccc;
+    margin-top: 10px;
+}
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999; /* Ensure it's on top */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+}
+
+.popup-content {
+   background-color: rgb(230, 230, 245);
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    max-width: 60%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 100%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.image-item img {
+    width: 60%;
+    height: auto;
+    border-radius: 5px;
+    display: block; /* Remove extra space below images */
+}
+    </style>
+    </head>
+<body>
+    <header class="top-nav">
+         <div class="logo-area">
+                <img src="images/1ring.png" alt="M/s Logo" class="logo"> <!-- Replace with your logo image -->
+              <div class="logo-text">
+                  <span class="m-text">
+            <p class="subtitle" style="color: white;">Wedding Matrimony</p></span>
+              </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="#" id="faq-button">FAQ</a></li>
+                <li><a href="#" id="contactBtn">Contact</a></li>
+                <li><a href="profile.html"><img src="images/profile.png"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-nav">
+        <div class="logo-area">
+                <img src="images/1ring.png" alt="M/s Logo" class="logo"> <!-- Replace with your logo image -->
+              <div class="logo-text">
+                  <span class="m-text">
+            <p class="subtitle" style="color: darkblue;">Wedding Matrimony</p></span>
+              </div>
+              </div>
+        <nav>
+            <ul>
+                <li><a href="#" id="openOverlayBtn">Explore &#9662;</a></li>
+                <li><a href="plans.html">Plans</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><button class="register-btn"><a href="register.html" style="color: white;">Register</a></button></li>
+            </ul>
+        </nav>
+    </div>
+ <div class="dashboard-container">
+    <aside class="sidebar">
+        <div class="user-profile">
+            <img src="images/pexels-photo-1130624.jpeg" alt="User Profile" style="width: 200px; height: 150px;border-radius: 25px;">
+           
+        </div>
+        <nav>
+            <ul style="list-style-type: none;line-height: 40px; font-size: 25px;">
+                <li><a href="dashboard.html" style="color: black;text-decoration: none;">⊞ DashBoard</a></li>
+                <li><a href="profile.html" style="color: black;text-decoration: none;">👤 Profile</a></li>
+                <li  id="openPopupBtn" style="cursor: pointer;">♡ Interest</a></li>
+                <li id="openChatPopupBtn"style="cursor: pointer;">🗪 Chat List</a></li>
+                <li id="openPlanPopup" style="cursor: pointer;">🗓️ Plan</a></li>
+                <li><a href="index.html" style="color: black;text-decoration: none;">➜]Logout</a></li>
+
+             
+            </ul>
+        </nav>
+    </aside>
+
+ <div class="profile-container">
+        <h1 style="text-decoration: underline;">My Profile
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+        </h1>
+        <p><strong>Name</strong> : Eleanor Pena</p>
+        <p><strong>ID</strong> : ABC9876532</p>
+        <p><strong>DOB</strong> : 05-05-2000</p>
+        <p><strong>Age</strong> : 25</p>
+        <p><strong>Gender</strong> : Female</p>
+        <p><strong>Address</strong> : 1/3, church street, central chennai</p>
+        <p><strong>Religion</strong> : Christion</p>
+        <p><strong>Caste</strong> : Nadar</p>
+        <p><strong>Qualification</strong> : B.E(ECE)</p>
+        <p><strong>Work</strong> : Office chennai</p>
+        <p><strong>Status</strong> : Single</p>
+        <p><strong>Heroscope</strong> : Pisces</p>
+         <button type="submit" class="register-button">Update Profile</button>
+    </div>
+</div>
+ <h1>New Request</h1>
+
+    <div class="container">
+        <div class="profile-card">
+            <img src="images/pexels-photo-2379004.jpeg" alt="John Smith" class="profile-image">
+            <div class="profile-details">
+                <div class="profile-name">John Smith</div>
+                <p><strong>Age:</strong> 21</p>
+                <p><strong>Height:</strong> 5.7</p>
+                <p><strong>Job:</strong> Working</p>
+                <p><strong>City:</strong> Chennai</p>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
+            <div class="action-buttons">
+                <button class="add-btn">Add</button>
+                <button class="remove-btn">Remove</button>
+            </div>
+            <div class="request-time">Request on: 10:30 AM, 18 April 2025</div>
+        </div>
+
+        <div class="profile-card">
+            <img src="images/pexels-photo-2814239.jpeg" alt="Smith K" class="profile-image">
+            <div class="profile-details">
+                <div class="profile-name">Smith K</div>
+                <p><strong>Age:</strong> 25</p>
+                <p><strong>Height:</strong> 5.9</p>
+                <p><strong>Job:</strong> Working</p>
+                <p><strong>City:</strong> Chennai</p>
+                <button class="view-profile-btn">View Profile</button>
+            </div>
+            <div class="action-buttons">
+                <button class="add-btn">Add</button>
+                <button class="remove-btn">Remove</button>
+            </div>
+             <div class="request-time">Request on: 10:30 AM, 18 April 2025</div><!-- No request time shown in the second card in the image, so omitting it here -->
+        </div>
+    </div>
+     <h1>Profile Views</h1>
+    <div class="chart-container">
+  <div class="y-axis">
+    <span class="y-label">90</span>
+    <span class="y-label">70</span>
+    <span class="y-label">50</span>
+    <span class="y-label">40</span>
+    <span class="y-label">30</span>
+    <span class="y-label">20</span>
+    <span class="y-label">10</span>
+    <span class="y-label">0</span>
+  </div>
+  <div class="grid-lines">
+    <div class="horizontal-line"></div>
+    <div class="horizontal-line"></div>
+    <div class="horizontal-line"></div>
+
+    <!-- Repeat for other horizontal lines -->
+  </div>
+  <div class="chart-line">
+   <svg width="800" height="300" viewBox="0 0 100 70">
+  <path d="M 0 70 L 10 60 L 20 55 L 35 45 L 50 33 L 90 33" 
+        style="fill:none;stroke:black;stroke-width:1"/>
+</svg>
+  </div>
+</div>
+ <div id="planDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-header">
+                <h2>PLAN 📅</h2>
+            </div>
+            <div class="plan-container">
+                <div class="plan-card">
+                    <h3>SILVER</h3>
+                    <p>Printer Took A Type And Scrambled</p>
+                    <p>500 Profile View 🚀</p>
+                    <p class="price">$250/Month</p>
+                    <ul class="features">
+                        <li>500 Premium Profiles view /month</li>
+                        <li>Free user profile can view</li>
+                        <li>View contact details</li>
+                        <li>Send interest</li>
+                        <li>Start Chat</li>
+                    </ul>
+                </div>
+                <div class="current-plan-card">
+                    <h3>Current Plan</h3>
+                    <p>Plan name: Silver</p>
+                    <p>Validity: 6 Months</p>
+                    <p>Valid Till 15 April 2025</p>
+                    <button class="upgrade-button">Upgrade Plan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+ <div id="chatEmptyPopup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="close-btn" id="closeChatPopupBtn">&times;</span>
+            <p>Your Chat List Is Empty Now</p>
+            <div class="chat-icon">!</div>
+        </div>
+    </div>
+      <div id="interestPopup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+
+            <h2>Interested On You ❤️</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="images/pexels-photo-1081606.jpeg" alt="Person 1">
+                </div>
+                <div class="image-item">
+                    <img src="images/pexels-photo-1760900.webp" alt="Person 2">
+                </div>
+                <div class="image-item">
+                    <img src="images/pexels-photo-1043473.jpeg" alt="Person 3">
+                </div>
+            </div>
+
+            <h2>Your Wish ❤️</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="images/pexels-photo-769732.jpeg" alt="Person 4">
+                </div>
+                <div class="image-item">
+                    <img src="images/pexels-photo-2379005.jpeg" alt="Person 5">
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 road, Chennai</li>
+                    <li><i class="fas fa-phone"></i> 9876543210</li>
+                    <li><i class="fas fa-envelope"></i> abcmatrimony@gmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Safety Information</a></li>
+                    <li><a href="#">Cancellation Options</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>FOLLOW US</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Download Our APP</h4>
+                <div class="app-downloads">
+                    <a href="#"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Google Play" class="app-badge"></a>
+                    <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" class="app-badge"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+      <div id="faq-section" class="faq-container hidden">
+        <h1>Frequently asked questions</h1>
+        <button class="close-button" id="close-faq-button">X</button>
+
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary class="faq-question">How Matrimony Works ? <span class="plus-icon">+</span></summary>
+                
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">Printing and typesetting industry? <span class="plus-icon">+</span></summary>
+                
+            </details>
+          <details class="faq-item">
+                <summary class="faq-question">Why do we use it? <span class="plus-icon">+</span></summary>
+                
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">There are many variation of passages? <span class="plus-icon">+</span></summary>
+                
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Whwe can I get some? <span class="plus-icon">+</span></summary>
+                
+            </details>
+        </div>
+    </div>
+    <div id="contactOverlay" class="overlay">
+        <div class="overlay-content">
+            <span class="close-btn">&times;</span>
+            <div class="decorative-elements">
+                <!-- Image of butterflies and couple would go here, potentially as a background image or img tag -->
+               
+            </div>
+            <div class="contact-form-container">
+                <h2>CONTACT TO US EASY AND FAST</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="mailId">Mail-Id</label>
+                        <input type="email" id="mailId" name="mailId">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group message-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <button type="submit" class="send-enquiry-btn">Send Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+     <div id="exploreOverlay" class="overlay">
+        <div class="overlay-content">
+            <div class="overlay-header">
+                <h2>Explore Category</h2>
+                <button class="close-btn" id="closeOverlayBtn">&times;</button>
+            </div>
+            <div class="category-cards">
+                <!-- Example Card -->
+                <div class="card">
+                    <div class="card-image-container">
+                        <img src="images/pexels-photo-413959.jpeg" alt="Browse Profiles">
+                        <div class="image-gradient"></div>
+                    </div>
+                    <div class="card-text">
+                        <h3>Browse Profiles</h3>
+                        <p>1200+ verified profiles</p>
+                    </div>
+                </div>
+                 <div class="card">
+                    <div class="card-image-container">
+                        <img src="images/istockphoto-1432006104-612x612.webp" alt="Browse Profiles">
+                        <div class="image-gradient"></div>
+                    </div>
+                    <div class="card-text">
+                        <h3>Wedding page</h3>
+                        <p>Make Reservation</p>
+                    </div>
+                </div>
+                 <div class="card">
+                    <div class="card-image-container">
+                        <img src="images/istockphoto-929904308-612x612.webp" alt="Browse Profiles">
+                        <div class="image-gradient"></div>
+                    </div>
+                    <div class="card-text">
+                        <h3>All Services</h3>
+                        <p>Catreing,Stage Decor Etc..</p>
+                    </div>
+                </div>
+                 <div class="card">
+                    <div class="card-image-container">
+                        <img src="images/finger.png" alt="Browse Profiles">
+                        <div class="image-gradient"></div>
+                    </div>
+                    <div class="card-text">
+                        <h3>Join Us</h3>
+                        <p>Join Us for More</p>
+                    </div>
+                </div>
+                <!-- Add more cards here -->
+            </div>
+        </div>
+    </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const faqButton = document.getElementById('faq-button');
+    const faqSection = document.getElementById('faq-section');
+    const closeFaqButton = document.getElementById('close-faq-button');
+    const mainContent = document.getElementById('main-content');
+
+    faqButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        faqSection.classList.remove('hidden'); // Show the FAQ section
+        mainContent.style.filter = 'blur(5px)'; // Blur the background content
+        mainContent.style.pointerEvents = 'none'; // Disable interaction with blurred content
+    });
+
+    closeFaqButton.addEventListener('click', function() {
+        faqSection.classList.add('hidden'); // Hide the FAQ section
+        mainContent.style.filter = 'none'; // Remove blur
+        mainContent.style.pointerEvents = 'auto'; // Re-enable interaction
+    });
+});
+      const contactBtn = document.getElementById('contactBtn');
+        const contactOverlay = document.getElementById('contactOverlay');
+        const closeBtn = document.querySelector('.close-btn');
+
+        contactBtn.addEventListener('click', () => {
+            contactOverlay.style.display = 'flex'; // or 'block' depending on layout
+        });
+
+        closeBtn.addEventListener('click', () => {
+            contactOverlay.style.display = 'none';
+        });
+
+        // Close when clicking outside the content
+        window.addEventListener('click', (event) => {
+            if (event.target === contactOverlay) {
+                contactOverlay.style.display = 'none';
+            }
+        });
+         // Basic JavaScript to toggle the overlay visibility
+        document.getElementById('openOverlayBtn').addEventListener('click', function() {
+            document.getElementById('exploreOverlay').style.display = 'flex';
+        });
+
+        document.getElementById('closeOverlayBtn').addEventListener('click', function() {
+            document.getElementById('exploreOverlay').style.display = 'none';
+        });
+document.addEventListener('DOMContentLoaded', () => {
+    const openButton = document.getElementById('openPlanPopup');
+    const modal = document.getElementById('planDetailsModal');
+    const closeButton = document.querySelector('.close-button');
+
+    // When the user clicks the button, open the modal
+    openButton.onclick = function() {
+        modal.style.display = "flex"; // Use flex to center the content
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    closeButton.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal content, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const openChatPopupBtn = document.getElementById('openChatPopupBtn');
+    const chatEmptyPopup = document.getElementById('chatEmptyPopup');
+    const closeChatPopupBtn = document.getElementById('closeChatPopupBtn');
+
+    openChatPopupBtn.addEventListener('click', function() {
+        chatEmptyPopup.style.display = 'flex'; // Show the popup
+    });
+
+    closeChatPopupBtn.addEventListener('click', function() {
+        chatEmptyPopup.style.display = 'none'; // Hide the popup
+    });
+
+    // Close popup if clicking outside the content
+    chatEmptyPopup.addEventListener('click', function(event) {
+        if (event.target === chatEmptyPopup) {
+            chatEmptyPopup.style.display = 'none';
+        }
+    });
+});
+document.getElementById('openPopupBtn').addEventListener('click', function() {
+    document.getElementById('interestPopup').style.display = 'flex';
+});
+
+document.querySelector('.close-btn').addEventListener('click', function() {
+    document.getElementById('interestPopup').style.display = 'none';
+});
+
+document.getElementById('interestPopup').addEventListener('click', function(event) {
+    if (event.target === this) { // Only close if clicking the overlay itself, not content
+        this.style.display = 'none';
+    }
+});
+
+</script>
+</body>
+</html>

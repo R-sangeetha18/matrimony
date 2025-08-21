@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Matrimony</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .form-container {
+   background-color:  rgb(230, 230, 245); /* Slightly lighter background for the form */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1000px;
+    margin-left: 10%;
+    border: 2px solid #333;
+    margin-bottom: 5%;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+    margin-right: 20px; /* Space between columns */
+}
+
+.form-group:last-child {
+    margin-right: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+    width: calc(100% - 20px); /* Adjust for padding */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding in width */
+}
+ .file-upload-container {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+        .file-upload-container input[type="file"] {
+            display: none; /* Hide the default file input */
+        }
+        .file-upload-container .choose-file-button {
+            background-color: #696969; /* Dark gray for button */
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        .file-upload-container .file-chosen-text {
+            font-size: 14px;
+            color: #333;
+        }
+        .register-button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .register-button {
+            background-color: #191970; /* Dark blue for button */
+            color: white;
+            padding: 12px 40px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+  </style>
+    </head>
+<body>
+    <header class="top-nav">
+         <div class="logo-area">
+                <img src="images/1ring.png" alt="M/s Logo" class="logo"> <!-- Replace with your logo image -->
+              <div class="logo-text">
+                  <span class="m-text">
+            <p class="subtitle" style="color: white;">Wedding Matrimony</p></span>
+              </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="#" id="faq-button">FAQ</a></li>
+                <li><a href="#" id="contactBtn">Contact</a></li>
+                <li><a href="profile.html"><img src="images/profile.png"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-nav">
+        <div class="logo-area">
+                <img src="images/1ring.png" alt="M/s Logo" class="logo"> <!-- Replace with your logo image -->
+              <div class="logo-text">
+                  <span class="m-text">
+            <p class="subtitle" style="color: darkblue;">Wedding Matrimony</p></span>
+              </div>
+              </div>
+        <nav>
+            <ul>
+                <li><a href="#" id="openOverlayBtn">Explore &#9662;</a></li>
+                <li><a href="plans.html">Plans</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><button class="register-btn"><a href="register.html" style="color: white;">Register</a></button></li>
+            </ul>
+        </nav>
+    </div>
+    <h1 style="border-bottom: none;">FREE <b style="color: #191970;">REGISTER</b></h1>
+    <div class="divider">
+        <img src="images/border2.png" style="width: 400px;margin-left: 36%;margin-top: -25px;">
+    </div>
+    <div class="form-container">
+        <h1>Personal Information</h1>
+        <form>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName">
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age">
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <input type="text" id="gender" name="gender">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fatherName">Father's Name</label>
+                    <input type="text" id="fatherName" name="fatherName">
+                </div>
+                <div class="form-group">
+                    <label for="motherName">Mother's Name</label>
+                    <input type="text" id="motherName" name="motherName">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="familyMembers">Family Members</label>
+                    <input type="number" id="familyMembers" name="familyMembers">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="pinCode">PIN Code</label>
+                    <input type="text" id="pinCode" name="pinCode">
+                </div>
+                <div class="form-group">
+                    <label for="district">District</label>
+                    <input type="text" id="district" name="district">
+                </div>
+            </div>
+             <div class="form-row">
+                <div class="form-group">
+                    <label for="pinCode">Caste</label>
+                    <input type="text" id="pinCode" name="pinCode">
+                </div>
+                <div class="form-group">
+                    <label for="district">Religion</label>
+                    <input type="text" id="district" name="district">
+                </div>
+            </div>
+             <div class="form-row">
+                <div class="form-group">
+                    <label for="pinCode">Mobile Number</label>
+                    <input type="text" id="pinCode" name="pinCode">
+                </div>
+                <div class="form-group">
+                    <label for="district">Mail-Id</label>
+                    <input type="text" id="district" name="district">
+                </div>
+            </div>
+             <div class="form-row">
+                <div class="form-group">
+                    <label for="pinCode">Rassi</label>
+                    <input type="text" id="pinCode" name="pinCode">
+                </div>
+                <div class="form-group">
+                    <label for="district">Rassi</label>
+                    <input type="text" id="district" name="district">
+                </div>
+            </div>
+            <h1>Professional Information</h1>
+             <div class="form-row">
+                <div class="form-group">
+                    <label for="pinCode">Educational Qualification</label>
+                    <input type="text" id="pinCode" name="pinCode">
+                </div>
+                <div class="form-group">
+                    <label for="district">Work</label>
+                    <input type="text" id="district" name="district">
+                </div>
+            </div>
+             <div class="form-row">
+                <div class="form-group">
+                    <label for="pinCode">Hobby</label>
+                    <input type="text" id="pinCode" name="pinCode">
+                </div>
+                <div class="form-group">
+                    <label for="district">Location</label>
+                    <input type="text" id="district" name="district">
+                </div>
+            </div>
+             <div class="form-row">
+                <div class="form-group">
+                    <label for="pinCode">New Password</label>
+                    <input type="text" id="pinCode" name="pinCode">
+                </div>
+               
+            </div>
+            <div class="form-group">
+                <label for="profilePhoto">Upload Your Profile Photo</label>
+                <div class="file-upload-container">
+                    <input type="file" id="profilePhoto">
+                    <label for="profilePhoto" class="choose-file-button">Choose File</label>
+                    <span class="file-chosen-text" id="profileFileName">No file choosen</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="horoscopePhoto">Upload Your Horoscope Photo</label>
+                <div class="file-upload-container">
+                    <input type="file" id="horoscopePhoto">
+                    <label for="horoscopePhoto" class="choose-file-button">Choose File</label>
+                    <span class="file-chosen-text" id="horoscopeFileName">No file choosen</span>
+                </div>
+            </div>
+
+            <div class="register-button-container">
+                <button type="submit" class="register-button">Register Now</button>
+            </div>
+        </form>
+    </div>
+
+  <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 road, Chennai</li>
+                    <li><i class="fas fa-phone"></i> 9876543210</li>
+                    <li><i class="fas fa-envelope"></i> abcmatrimony@gmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Safety Information</a></li>
+                    <li><a href="#">Cancellation Options</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>FOLLOW US</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Download Our APP</h4>
+                <div class="app-downloads">
+                    <a href="#"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Google Play" class="app-badge"></a>
+                    <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" class="app-badge"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+      <div id="faq-section" class="faq-container hidden">
+        <h1>Frequently asked questions</h1>
+        <button class="close-button" id="close-faq-button">X</button>
+
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary class="faq-question">How Matrimony Works ? <span class="plus-icon">+</span></summary>
+                
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">Printing and typesetting industry? <span class="plus-icon">+</span></summary>
+                
+            </details>
+          <details class="faq-item">
+                <summary class="faq-question">Why do we use it? <span class="plus-icon">+</span></summary>
+                
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">There are many variation of passages? <span class="plus-icon">+</span></summary>
+                
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Whwe can I get some? <span class="plus-icon">+</span></summary>
+                
+            </details>
+        </div>
+    </div>
+    <div id="contactOverlay" class="overlay">
+        <div class="overlay-content">
+            <span class="close-btn">&times;</span>
+            <div class="decorative-elements">
+                <!-- Image of butterflies and couple would go here, potentially as a background image or img tag -->
+               
+            </div>
+            <div class="contact-form-container">
+                <h2>CONTACT TO US EASY AND FAST</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="mailId">Mail-Id</label>
+                        <input type="email" id="mailId" name="mailId">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group message-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <button type="submit" class="send-enquiry-btn">Send Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+     <div id="exploreOverlay" class="overlay">
+        <div class="overlay-content">
+            <div class="overlay-header">
+                <h2>Explore Category</h2>
+                <button class="close-btn" id="closeOverlayBtn">&times;</button>
+            </div>
+            <div class="category-cards">
+                <!-- Example Card -->
+                <div class="card">
+                    <div class="card-image-container">
+                        <img src="images/pexels-photo-413959.jpeg" alt="Browse Profiles">
+                        <div class="image-gradient"></div>
+                    </div>
+                    <div class="card-text">
+                        <h3>Browse Profiles</h3>
+                        <p>1200+ verified profiles</p>
+                    </div>
+                </div>
+                 <div class="card">
+                    <div class="card-image-container">
+                        <img src="images/istockphoto-1432006104-612x612.webp" alt="Browse Profiles">
+                        <div class="image-gradient"></div>
+                    </div>
+                    <div class="card-text">
+                        <h3>Wedding page</h3>
+                        <p>Make Reservation</p>
+                    </div>
+                </div>
+                 <div class="card">
+                    <div class="card-image-container">
+                        <img src="images/istockphoto-929904308-612x612.webp" alt="Browse Profiles">
+                        <div class="image-gradient"></div>
+                    </div>
+                    <div class="card-text">
+                        <h3>All Services</h3>
+                        <p>Catreing,Stage Decor Etc..</p>
+                    </div>
+                </div>
+                 <div class="card">
+                    <div class="card-image-container">
+                        <img src="images/finger.png" alt="Browse Profiles">
+                        <div class="image-gradient"></div>
+                    </div>
+                    <div class="card-text">
+                        <h3>Join Us</h3>
+                        <p>Join Us for More</p>
+                    </div>
+                </div>
+                <!-- Add more cards here -->
+            </div>
+        </div>
+    </div>
+
+
+     <script>
+      document.addEventListener("DOMContentLoaded", function() {
+    const lazyImages = document.querySelectorAll('img.lazy-load');
+    const galleryContainer = document.querySelector('.gallery-container'); // Get the gallery container
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy-load');
+                observer.unobserve(img);
+            }
+        });
+    }, observerOptions);
+
+    lazyImages.forEach(image => {
+        imageObserver.observe(image);
+    });
+
+    // Dynamic scrolling on hover
+    let scrollInterval; // To store the interval for scrolling
+
+    galleryContainer.addEventListener('mouseenter', () => {
+        // Start scrolling when mouse enters the gallery
+        scrollInterval = setInterval(() => {
+            galleryContainer.scrollLeft += 2; // Adjust scroll speed here
+        }, 20); // Adjust interval for smoother or faster scrolling
+    });
+
+    galleryContainer.addEventListener('mouseleave', () => {
+        // Stop scrolling when mouse leaves the gallery
+        clearInterval(scrollInterval);
+    });
+
+    galleryContainer.addEventListener('mousemove', (e) => {
+        // Dynamic scroll based on mouse position
+        const containerWidth = galleryContainer.offsetWidth;
+        const mouseX = e.clientX - galleryContainer.getBoundingClientRect().left; // Mouse X relative to container
+
+        const scrollSpeedMultiplier = 0.5; // Adjust sensitivity
+        let newScrollAmount = (mouseX - containerWidth / 2) * scrollSpeedMultiplier;
+
+        // Optionally, make scrolling faster when closer to edges
+        const edgeThreshold = 50; // Pixels from edge to increase speed
+        if (mouseX < edgeThreshold) {
+            newScrollAmount = -((edgeThreshold - mouseX) * scrollSpeedMultiplier * 2);
+        } else if (mouseX > containerWidth - edgeThreshold) {
+            newScrollAmount = ((mouseX - (containerWidth - edgeThreshold)) * scrollSpeedMultiplier * 2);
+        }
+
+        // Apply immediate scroll for responsiveness
+        galleryContainer.scrollLeft += newScrollAmount * 0.1; // Small increment for smoother feel
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const faqButton = document.getElementById('faq-button');
+    const faqSection = document.getElementById('faq-section');
+    const closeFaqButton = document.getElementById('close-faq-button');
+    const mainContent = document.getElementById('main-content');
+
+    faqButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        faqSection.classList.remove('hidden'); // Show the FAQ section
+        mainContent.style.filter = 'blur(5px)'; // Blur the background content
+        mainContent.style.pointerEvents = 'none'; // Disable interaction with blurred content
+    });
+
+    closeFaqButton.addEventListener('click', function() {
+        faqSection.classList.add('hidden'); // Hide the FAQ section
+        mainContent.style.filter = 'none'; // Remove blur
+        mainContent.style.pointerEvents = 'auto'; // Re-enable interaction
+    });
+});
+      const contactBtn = document.getElementById('contactBtn');
+        const contactOverlay = document.getElementById('contactOverlay');
+        const closeBtn = document.querySelector('.close-btn');
+
+        contactBtn.addEventListener('click', () => {
+            contactOverlay.style.display = 'flex'; // or 'block' depending on layout
+        });
+
+        closeBtn.addEventListener('click', () => {
+            contactOverlay.style.display = 'none';
+        });
+
+        // Close when clicking outside the content
+        window.addEventListener('click', (event) => {
+            if (event.target === contactOverlay) {
+                contactOverlay.style.display = 'none';
+            }
+        });
+         // Basic JavaScript to toggle the overlay visibility
+        document.getElementById('openOverlayBtn').addEventListener('click', function() {
+            document.getElementById('exploreOverlay').style.display = 'flex';
+        });
+
+        document.getElementById('closeOverlayBtn').addEventListener('click', function() {
+            document.getElementById('exploreOverlay').style.display = 'none';
+        });
+    </script>
+    
+</body>
+</html>
