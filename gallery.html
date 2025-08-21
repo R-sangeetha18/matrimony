@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Matrimony</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    .slider-container {
+    width: 100vw; /* Adjust as needed */
+    max-width: 1600px; /* Max width for larger screens */
+    height: 45vw; /* Maintain aspect ratio (e.g., 16:9 for 80vw width) */
+    max-height: 337.5px; /* Adjust based on max-width for 16:9 ratio (600 * 9/16) */
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+}
+
+.slider-wrapper {
+    display: flex;
+    width: 400%; /* (Number of images + 1 duplicated image) * 100% */
+    height: 100%;
+    animation: slideImages 12s infinite linear; /* Adjust time based on number of images and desired speed */
+}
+
+.slider-wrapper img {
+    width: 25%; /* 100% / (Number of images + 1 duplicated image) */
+    height: 100%;
+    object-fit: cover; /* Cover the container without distorting aspect ratio */
+}
+
+@keyframes slideImages {
+    0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(0); /* Stay on first image */
+    }
+    25% {
+        transform: translateX(-25%); /* Move to second image */
+    }
+    45% {
+        transform: translateX(-25%); /* Stay on second image */
+    }
+    50% {
+        transform: translateX(-50%); /* Move to third image */
+    }
+    70% {
+        transform: translateX(-50%); /* Stay on third image */
+    }
+    75% {
+        transform: translateX(-75%); /* Move to duplicated first image */
+    }
+    95% {
+        transform: translateX(-75%); /* Stay on duplicated first image */
+    }
+    100% {
+        transform: translateX(0); /* Snap back to the beginning for seamless loop */
+    }
+}
+.info-bar {
+    background-color: #666666; /* A shade of grey similar to the image */
+    padding: 15px 20px; /* Adjust padding as needed */
+    display: flex; /* To align items horizontally */
+   
+    color: #cccccc; /* Light grey for the default text */
+    font-family: Arial, sans-serif; /* Example font */
+    font-size: 20px; /* Example font size */
+}
+
+.info-text {
+    margin-right: 10px; /* Space between the text and the button */
+    margin-left: 5%;
+}
+
+.register-button {
+    background-color: transparent; /* No background for the button */
+    color: #333; /* White color for "Register Now" */
+    text-decoration: none; /* Remove underline from link */
+    font-weight: bold; /* Make "Register Now" bold */
+    border: none; /* No border for the button */
+    padding: 0; /* No padding for the button itself if it's a link styled as text */
+    cursor: pointer; /* Indicate it's clickable */
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    display: flex; /* Use flexbox to center the card */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top of other content */
+    /* Initially hidden, uncomment 'display: flex;' in JS to show on load or add button to trigger */
+    display: none; 
+}
+
+/* Profile Card Styling */
+.profile-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px; /* Adjust max-width as needed */
+    position: relative;
+    text-align: left;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+h2 {
+    color: #333;
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile-content {
+    display: flex;
+    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 20px;
+}
+
+.profile-image-container {
+    flex: 0 0 auto; /* Don't grow or shrink, take natural width */
+    margin-right: 30px;
+    text-align: center;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px; /* Rounded corners for the image */
+    object-fit: cover; /* Ensures image fills the area without distortion */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quick-details {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+}
+
+.details-list {
+    flex: 1; /* Allows the details list to take remaining space */
+    min-width: 200px; /* Ensures details don't get too cramped */
+}
+
+.details-list p {
+    margin: 8px 0;
+    font-size: 16px;
+    color: #444;
+}
+
+.details-list strong {
+    color: #222;
+}
+
+.know-more-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block; /* Make button full width of its container */
+    width: fit-content; /* Adjust width based on content */
+    margin: 0 auto; /* Center the button */
+    transition: background-color 0.3s ease;
+}
+
+.know-more-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profile-card {
+        padding: 20px;
+    }
+    .profile-content {
+        flex-direction: column; /* Stack elements vertically on small screens */
+        align-items: center; /* Center items when stacked */
+    }
+    .profile-image-container {
+        margin-right: 0;
+        margin-bottom: 20px; /* Add space below image when stacked */
+    }
+    .quick-details, .details-list {
+        text-align: center; /* Center text when stacked */
+    }
+}
+.gallery-container {
+    display: flex;
+    white-space: nowrap; /* Prevent items from wrapping to the next line */
+   margin-left: 5%; /* overflow-x: hidden;  Hide scrollbar for auto-scroll animation */
+}
+
+.gallery-item {
+    flex-shrink: 0; /* Prevent items from shrinking */
+    padding: 10px; /* Spacing between images */
+}
+
+.gallery-item img {
+    width: 250px; 
+    height: 350px; 
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+/* Auto-Scrolling Specific Styles */
+.scroll-wrapper {
+    overflow: hidden; /* Hide content overflowing the visible area */
+    width: 100%; /* Or a fixed width for the visible part of the gallery */
+}
+
+.auto-scroll {
+    animation: scroll-left linear infinite; /* Apply animation */
+    /* Calculate animation duration based on content width for smooth loop */
+    animation-duration: 20s; /* Adjust speed as needed */
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0); /* Start at original position */
+    }
+    100% {
+        /* Move left by the full width of the original gallery content */
+        /* You might need to adjust this value based on your actual content width to ensure a seamless loop */
+        transform: translateX(-50%); /* For a perfect loop with duplicated content */
+    }
+}
+
+/* Optional: Pause on hover */
+.auto-scroll:hover {
+    animation-play-state: paused;
+}
+
+
+/* Popup Modal Styles (from previous response, untouched) */
+.popup-modal {
+    display: none; 
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7); 
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-modal.active {
+    display: flex; 
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.profile-content {
+    display: flex;
+    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 20px;
+}
+
+.profile-image-container {
+    flex: 0 0 auto; /* Don't grow or shrink, take natural width */
+    margin-right: 30px;
+    text-align: center;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px; /* Rounded corners for the image */
+    object-fit: cover; /* Ensures image fills the area without distortion */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quick-details {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+}
+
+.details-list {
+    flex: 1; /* Allows the details list to take remaining space */
+    min-width: 200px; /* Ensures details don't get too cramped */
+}
+
+.details-list p {
+    margin: 8px 0;
+    font-size: 16px;
+    color: #444;
+}
+
+.details-list strong {
+    color: #222;
+}
+
+.know-more-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block; /* Make button full width of its container */
+    width: fit-content; /* Adjust width based on content */
+    margin: 0 auto; /* Center the button */
+    transition: background-color 0.3s ease;
+}
+
+.know-more-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profile-card {
+        padding: 20px;
+    }
+    .profile-content {
+        flex-direction: column; /* Stack elements vertically on small screens */
+        align-items: center; /* Center items when stacked */
+    }
+    .profile-image-container {
+        margin-right: 0;
+        margin-bottom: 20px; /* Add space below image when stacked */
+    }
+    .quick-details, .details-list {
+        text-align: center; /* Center text when stacked */
+    }
+}
+
+
+    
+
+</style>
+    </head>
+<body>
+    <header class="top-nav">
+         <div class="logo-area">
+                <img src="images/1ring.png" alt="M/s Logo" class="logo"> <!-- Replace with your logo image -->
+              <div class="logo-text">
+                  <span class="m-text">
+            <p class="subtitle" style="color: white;">Wedding Matrimony</p></span>
+              </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="#" id="faq-button">FAQ</a></li>
+                <li><a href="#" id="contactBtn">Contact</a></li>
+                <li><a href="profile.html"><img src="images/profile.png"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-nav">
+        <div class="logo-area">
+                <img src="images/1ring.png" alt="M/s Logo" class="logo"> <!-- Replace with your logo image -->
+              <div class="logo-text">
+                  <span class="m-text">
+            <p class="subtitle" style="color: darkblue;">Wedding Matrimony</p></span>
+              </div>
+              </div>
+        <nav>
+            <ul>
+                <li><a href="#" id="openOverlayBtn">Explore &#9662;</a></li>
+                <li><a href="plans.html">Plans</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><button class="register-btn"><a href="register.html" style="color: white;">Register</a></button></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="slider-container">
+        <div class="slider-wrapper">
+            <img src="images/banner1.png" alt="Image 1">
+            <img src="images/banner.png" alt="Image 2">
+            <img src="images/banner3.png" alt="Image 3">
+            <!-- Duplicate the first image for a seamless loop -->
+            <img src="images/banner1.png" alt="Image 1 Duplicate">
+        </div>
+    </div>
+    <h2 style="text-align: start; margin-left: 5%;">PHOTO GALLERY</h2>
+     <div class="scroll-wrapper"> <!-- New wrapper for scrolling -->
+        <div class="gallery-container auto-scroll"> 
+            <div class="gallery-item">
+                <img src="images/pexels-photo-413959.jpeg" alt="Image 1" class="trigger-popup" data-popup-target="popup2">
+            </div>
+            <div class="gallery-item">
+                <img src="images/pexels-photo-1065084.jpeg" alt="Image 2" class="trigger-popup" data-popup-target="popup1">
+            </div>
+            <!-- Add more gallery items here. For a continuous loop, duplicate your images/items inside the gallery-container -->
+            <div class="gallery-item">
+                <img src="images/pexels-photo-1043473.jpeg" alt="Image 1 (duplicate)" class="trigger-popup" data-popup-target="popup1">
+            </div>
+            <div class="gallery-item">
+                <img src="images/pexels-photo-769732.jpeg" alt="Image 2 (duplicate)" class="trigger-popup" data-popup-target="popup2">
+            </div>
+            <div class="gallery-item">
+                <img src="images/pexels-photo-1130624.jpeg" alt="Image 2 (duplicate)" class="trigger-popup" data-popup-target="popup2">
+            </div>
+            <div class="gallery-item">
+                <img src="images/pexels-photo-2379004.jpeg" alt="Image 2 (duplicate)" class="trigger-popup" data-popup-target="popup2">
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Modals (as in previous response) -->
+    <div id="popup1" class="popup-modal">
+        <div class="popup-content">
+            <span class="close-button">&times;</span>
+           <h2>Basic Details About Eleanor Pena</h2>
+              <div class="profile-content">
+                <div class="profile-image-container">
+                    <img src="images/pexels-photo-1065084.jpeg" alt="Eleanor Pena Profile Picture" class="profile-picture">
+                    <div class="quick-details">
+                        <p><strong>Name:</strong> Eleanor Pena</p>
+                        <p><strong>ID:</strong> ABC12345690</p>
+                    </div>
+                </div>
+                
+                <div class="details-list">
+                    <p><strong>Name:</strong> Eleanor Pena</p>
+                    <p><strong>ID:</strong> ABC12345690</p>
+                    <p><strong>Age:</strong> 25</p>
+                    <p><strong>DOB:</strong> 05-05-2000</p>
+                    <p><strong>Gender:</strong> Female</p>
+                </div>
+            </div>
+            
+            <button class="know-more-btn"><a href="know.html" style="color: white;text-decoration: none;">Know More</a></button>
+        </div>
+        </div>
+    </div>
+    <h2 style="text-align: start; margin-left: 5%;">NEAREST TO YOU</h2>
+     <div class="gallery-container1">
+        <!-- Replace with your image paths and descriptions -->
+        <img class="lazy-load" data-src="images/pexels-photo-1043473.jpeg" alt="Description for Image 1">
+        <img class="lazy-load" data-src="images/pexels-photo-975657.jpeg" alt="Description for Image 2">
+        <img class="lazy-load" data-src="images/pexels-photo-1580271.jpeg" alt="Description for Image 3">
+        <img class="lazy-load" data-src="images/pexels-photo-2814239.jpeg" alt="Description for Image 4">
+        <img class="lazy-load" data-src="images/pexels-photo-769732.jpeg" alt="Description for Image 5">
+        <img class="lazy-load" data-src="images/pexels-photo-1130624.jpeg" alt="Description for Image 6">
+    </div>
+    <h2 style="text-align: start; margin-left: 5%;">WEDDING ARRANGEMENTS</h2>
+     <div class="gallery-container2">
+        <!-- Replace with your image paths and descriptions -->
+        <img class="lazy-load" data-src="images/pexels-photo-14646744.jpeg" alt="Description for Image 1">
+        <img class="lazy-load" data-src="images/pexels-photo-169196.jpeg" alt="Description for Image 2">
+        <img class="lazy-load" data-src="images/9150f6c827322eaf17f04f735c58baad.jpg" alt="Description for Image 3">
+        <img class="lazy-load" data-src="images/pexels-photo-169193.jpeg" alt="Description for Image 4">
+        <img class="lazy-load" data-src="images/pexels-photo-2504974.jpeg" alt="Description for Image 5">
+        <img class="lazy-load" data-src="images/pexels-photo-704748.webp" alt="Description for Image 6">
+    </div>
+    <div class="info-bar">
+    <span class="info-text">For More Profiles And Informations</span>
+    <a href="#" class="register-button">Register Now</a>
+</div>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 road, Chennai</li>
+                    <li><i class="fas fa-phone"></i> 9876543210</li>
+                    <li><i class="fas fa-envelope"></i> abcmatrimony@gmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Safety Information</a></li>
+                    <li><a href="#">Cancellation Options</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>FOLLOW US</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Download Our APP</h4>
+                <div class="app-downloads">
+                    <a href="#"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Google Play" class="app-badge"></a>
+                    <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" class="app-badge"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+      <div id="faq-section" class="faq-container hidden">
+        <h1>Frequently asked questions</h1>
+        <button class="close-button" id="close-faq-button">X</button>
+
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary class="faq-question">How Matrimony Works ? <span class="plus-icon">+</span></summary>
+                
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">Printing and typesetting industry? <span class="plus-icon">+</span></summary>
+                
+            </details>
+          <details class="faq-item">
+                <summary class="faq-question">Why do we use it? <span class="plus-icon">+</span></summary>
+                
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">There are many variation of passages? <span class="plus-icon">+</span></summary>
+                
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Whwe can I get some? <span class="plus-icon">+</span></summary>
+                
+            </details>
+        </div>
+    </div>
+    <div id="contactOverlay" class="overlay">
+        <div class="overlay-content">
+            <span class="close-btn">&times;</span>
+            <div class="decorative-elements">
+                <!-- Image of butterflies and couple would go here, potentially as a background image or img tag -->
+               
+            </div>
+            <div class="contact-form-container">
+                <h2>CONTACT TO US EASY AND FAST</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="mailId">Mail-Id</label>
+                        <input type="email" id="mailId" name="mailId">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group message-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <button type="submit" class="send-enquiry-btn">Send Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+     <div id="exploreOverlay" class="overlay">
+        <div class="overlay-content">
+            <div class="overlay-header">
+                <h2>Explore Category</h2>
+                <button class="close-btn" id="closeOverlayBtn">&times;</button>
+            </div>
+            <div class="category-cards">
+                <!-- Example Card -->
+                <div class="card">
+                    <div class="card-image-container">
+                        <img src="images/pexels-photo-413959.jpeg" alt="Browse Profiles">
+                        <div class="image-gradient"></div>
+                    </div>
+                    <div class="card-text">
+                        <h3>Browse Profiles</h3>
+                        <p>1200+ verified profiles</p>
+                    </div>
+                </div>
+                 <div class="card">
+                    <div class="card-image-container">
+                        <img src="images/istockphoto-1432006104-612x612.webp" alt="Browse Profiles">
+                        <div class="image-gradient"></div>
+                    </div>
+                    <div class="card-text">
+                        <h3>Wedding page</h3>
+                        <p>Make Reservation</p>
+                    </div>
+                </div>
+                 <div class="card">
+                    <div class="card-image-container">
+                        <img src="images/istockphoto-929904308-612x612.webp" alt="Browse Profiles">
+                        <div class="image-gradient"></div>
+                    </div>
+                    <div class="card-text">
+                        <h3>All Services</h3>
+                        <p>Catreing,Stage Decor Etc..</p>
+                    </div>
+                </div>
+                 <div class="card">
+                    <div class="card-image-container">
+                        <img src="images/finger.png" alt="Browse Profiles">
+                        <div class="image-gradient"></div>
+                    </div>
+                    <div class="card-text">
+                        <h3>Join Us</h3>
+                        <p>Join Us for More</p>
+                    </div>
+                </div>
+                <!-- Add more cards here -->
+            </div>
+        </div>
+    </div>
+ <div class="overlay" id="profileOverlay">
+        <div class="profile-card">
+            <span class="close-btn" onclick="closeOverlay()">X</span>
+            <h2>Basic Details About Eleanor Pena</h2>
+            
+            <div class="profile-content">
+                <div class="profile-image-container">
+                    <img src="https://via.placeholder.com/150" alt="Eleanor Pena Profile Picture" class="profile-picture">
+                    <div class="quick-details">
+                        <p><strong>Name:</strong> Eleanor Pena</p>
+                        <p><strong>ID:</strong> ABC12345690</p>
+                    </div>
+                </div>
+                
+                <div class="details-list">
+                    <p><strong>Name:</strong> Eleanor Pena</p>
+                    <p><strong>ID:</strong> ABC12345690</p>
+                    <p><strong>Age:</strong> 25</p>
+                    <p><strong>DOB:</strong> 05-05-2000</p>
+                    <p><strong>Gender:</strong> Female</p>
+                </div>
+            </div>
+            
+            <button class="know-more-btn">Know More</button>
+        </div>
+    </div>
+
+
+     <script>
+      document.addEventListener("DOMContentLoaded", function() {
+    const lazyImages = document.querySelectorAll('img.lazy-load');
+    const galleryContainer = document.querySelector('.gallery-container'); // Get the gallery container
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy-load');
+                observer.unobserve(img);
+            }
+        });
+    }, observerOptions);
+
+    lazyImages.forEach(image => {
+        imageObserver.observe(image);
+    });
+
+    // Dynamic scrolling on hover
+    let scrollInterval; // To store the interval for scrolling
+
+    galleryContainer.addEventListener('mouseenter', () => {
+        // Start scrolling when mouse enters the gallery
+        scrollInterval = setInterval(() => {
+            galleryContainer.scrollLeft += 2; // Adjust scroll speed here
+        }, 20); // Adjust interval for smoother or faster scrolling
+    });
+
+    galleryContainer.addEventListener('mouseleave', () => {
+        // Stop scrolling when mouse leaves the gallery
+        clearInterval(scrollInterval);
+    });
+
+    galleryContainer.addEventListener('mousemove', (e) => {
+        // Dynamic scroll based on mouse position
+        const containerWidth = galleryContainer.offsetWidth;
+        const mouseX = e.clientX - galleryContainer.getBoundingClientRect().left; // Mouse X relative to container
+
+        const scrollSpeedMultiplier = 0.5; // Adjust sensitivity
+        let newScrollAmount = (mouseX - containerWidth / 2) * scrollSpeedMultiplier;
+
+        // Optionally, make scrolling faster when closer to edges
+        const edgeThreshold = 50; // Pixels from edge to increase speed
+        if (mouseX < edgeThreshold) {
+            newScrollAmount = -((edgeThreshold - mouseX) * scrollSpeedMultiplier * 2);
+        } else if (mouseX > containerWidth - edgeThreshold) {
+            newScrollAmount = ((mouseX - (containerWidth - edgeThreshold)) * scrollSpeedMultiplier * 2);
+        }
+
+        // Apply immediate scroll for responsiveness
+        galleryContainer.scrollLeft += newScrollAmount * 0.1; // Small increment for smoother feel
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const faqButton = document.getElementById('faq-button');
+    const faqSection = document.getElementById('faq-section');
+    const closeFaqButton = document.getElementById('close-faq-button');
+    const mainContent = document.getElementById('main-content');
+
+    faqButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        faqSection.classList.remove('hidden'); // Show the FAQ section
+        mainContent.style.filter = 'blur(5px)'; // Blur the background content
+        mainContent.style.pointerEvents = 'none'; // Disable interaction with blurred content
+    });
+
+    closeFaqButton.addEventListener('click', function() {
+        faqSection.classList.add('hidden'); // Hide the FAQ section
+        mainContent.style.filter = 'none'; // Remove blur
+        mainContent.style.pointerEvents = 'auto'; // Re-enable interaction
+    });
+});
+      const contactBtn = document.getElementById('contactBtn');
+        const contactOverlay = document.getElementById('contactOverlay');
+        const closeBtn = document.querySelector('.close-btn');
+
+        contactBtn.addEventListener('click', () => {
+            contactOverlay.style.display = 'flex'; // or 'block' depending on layout
+        });
+
+        closeBtn.addEventListener('click', () => {
+            contactOverlay.style.display = 'none';
+        });
+
+        // Close when clicking outside the content
+        window.addEventListener('click', (event) => {
+            if (event.target === contactOverlay) {
+                contactOverlay.style.display = 'none';
+            }
+        });
+         // Basic JavaScript to toggle the overlay visibility
+        document.getElementById('openOverlayBtn').addEventListener('click', function() {
+            document.getElementById('exploreOverlay').style.display = 'flex';
+        });
+
+        document.getElementById('closeOverlayBtn').addEventListener('click', function() {
+            document.getElementById('exploreOverlay').style.display = 'none';
+        });
+         document.addEventListener("DOMContentLoaded", function() {
+    const lazyImages = document.querySelectorAll('img.lazy-load');
+    const galleryContainer1 = document.querySelector('.gallery-container1'); // Get the gallery container
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy-load');
+                observer.unobserve(img);
+            }
+        });
+    }, observerOptions);
+
+    lazyImages.forEach(image => {
+        imageObserver.observe(image);
+    });
+
+    // Dynamic scrolling on hover
+    let scrollInterval; // To store the interval for scrolling
+
+    galleryContainer1.addEventListener('mouseenter', () => {
+        // Start scrolling when mouse enters the gallery
+        scrollInterval = setInterval(() => {
+            galleryContainer1.scrollLeft += 2; // Adjust scroll speed here
+        }, 20); // Adjust interval for smoother or faster scrolling
+    });
+
+    galleryContainer1.addEventListener('mouseleave', () => {
+        // Stop scrolling when mouse leaves the gallery
+        clearInterval(scrollInterval);
+    });
+
+    galleryContainer1.addEventListener('mousemove', (e) => {
+        // Dynamic scroll based on mouse position
+        const containerWidth = galleryContainer1.offsetWidth;
+        const mouseX = e.clientX - galleryContainer1.getBoundingClientRect().left; // Mouse X relative to container
+
+        const scrollSpeedMultiplier = 0.5; // Adjust sensitivity
+        let newScrollAmount = (mouseX - containerWidth / 2) * scrollSpeedMultiplier;
+
+        // Optionally, make scrolling faster when closer to edges
+        const edgeThreshold = 50; // Pixels from edge to increase speed
+        if (mouseX < edgeThreshold) {
+            newScrollAmount = -((edgeThreshold - mouseX) * scrollSpeedMultiplier * 2);
+        } else if (mouseX > containerWidth - edgeThreshold) {
+            newScrollAmount = ((mouseX - (containerWidth - edgeThreshold)) * scrollSpeedMultiplier * 2);
+        }
+
+        // Apply immediate scroll for responsiveness
+        galleryContainer1.scrollLeft += newScrollAmount * 0.1; // Small increment for smoother feel
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const lazyImages = document.querySelectorAll('img.lazy-load');
+    const galleryContainer2 = document.querySelector('.gallery-container2'); // Get the gallery container
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy-load');
+                observer.unobserve(img);
+            }
+        });
+    }, observerOptions);
+
+    lazyImages.forEach(image => {
+        imageObserver.observe(image);
+    });
+
+    // Dynamic scrolling on hover
+    let scrollInterval; // To store the interval for scrolling
+
+    galleryContainer2.addEventListener('mouseenter', () => {
+        // Start scrolling when mouse enters the gallery
+        scrollInterval = setInterval(() => {
+            galleryContainer2.scrollLeft += 2; // Adjust scroll speed here
+        }, 20); // Adjust interval for smoother or faster scrolling
+    });
+
+    galleryContainer2.addEventListener('mouseleave', () => {
+        // Stop scrolling when mouse leaves the gallery
+        clearInterval(scrollInterval);
+    });
+
+    galleryContainer2.addEventListener('mousemove', (e) => {
+        // Dynamic scroll based on mouse position
+        const containerWidth = galleryContainer2.offsetWidth;
+        const mouseX = e.clientX - galleryContainer2.getBoundingClientRect().left; // Mouse X relative to container
+
+        const scrollSpeedMultiplier = 0.5; // Adjust sensitivity
+        let newScrollAmount = (mouseX - containerWidth / 2) * scrollSpeedMultiplier;
+
+        // Optionally, make scrolling faster when closer to edges
+        const edgeThreshold = 50; // Pixels from edge to increase speed
+        if (mouseX < edgeThreshold) {
+            newScrollAmount = -((edgeThreshold - mouseX) * scrollSpeedMultiplier * 2);
+        } else if (mouseX > containerWidth - edgeThreshold) {
+            newScrollAmount = ((mouseX - (containerWidth - edgeThreshold)) * scrollSpeedMultiplier * 2);
+        }
+
+        // Apply immediate scroll for responsiveness
+        galleryContainer2.scrollLeft += newScrollAmount * 0.1; // Small increment for smoother feel
+    });
+});
+  // Optional: JavaScript to show/hide the overlay
+        function showOverlay() {
+            document.getElementById('profileOverlay').style.display = 'flex';
+        }
+
+        function closeOverlay() {
+            document.getElementById('profileOverlay').style.display = 'none';
+        }
+
+        // Example: Call showOverlay() to display the modal initially (e.g., after page load)
+        // You would typically trigger this with a button click or other event.
+        // window.onload = showOverlay; 
+          document.addEventListener('DOMContentLoaded', () => {
+    const triggerImages = document.querySelectorAll('.trigger-popup');
+    const closeButtons = document.querySelectorAll('.close-button');
+    const popupModals = document.querySelectorAll('.popup-modal');
+
+    function openPopup(popupId) {
+        const targetPopup = document.getElementById(popupId);
+        if (targetPopup) {
+            targetPopup.classList.add('active');
+        }
+    }
+
+    function closeAllPopups() {
+        popupModals.forEach(modal => {
+            modal.classList.remove('active');
+        });
+    }
+
+    triggerImages.forEach(img => {
+        img.addEventListener('click', (event) => {
+            const popupId = event.target.dataset.popupTarget;
+            openPopup(popupId);
+        });
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            closeAllPopups();
+        });
+    });
+
+    popupModals.forEach(modal => {
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeAllPopups();
+            }
+        });
+    });
+});
+
+    </script>
+    
+</body>
+</html>
